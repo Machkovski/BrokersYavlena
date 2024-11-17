@@ -34,7 +34,7 @@ public class YavlenaBrokerstPage {
 
     @BeforeClass
     void Setup() {
-//maximize
+        
         driver = new ChromeDriver();
         driver.get("https://www.yavlena.com/en/broker?city=Sofia");
         driver.manage().window().maximize();
