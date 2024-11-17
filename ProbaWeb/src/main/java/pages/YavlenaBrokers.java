@@ -60,13 +60,13 @@ public class YavlenaBrokers {
         });
     }
 
-    //Tried different types of waits, if-else statements, while loop, fluent wait with polling and some custom-made waits, but none of them resulted to wait enough
+    //Tried different types of waits, implicit waits, if-else statements, while loop, fluent wait with polling and some custom-made waits, but none of them resulted to wait enough
     //for the broker's card to be displayed in a separate view. Since details button is visible on the start before we search for the broker,
-    //it clicks the button immediately resulting in test-fail. Left one of the waits above. The thread.sleep is the worst scenario, but it seemed
+    //it clicks the button immediately resulting in test-fail. Left one of the waits above. The thread.sleep is the worst scenario, but it seemed like the only one that could provide
+    //any results and the only one that went through the brokers. I left it as a comment in order to be tried if one wants.
     public void clickDetailsButton() throws InterruptedException {
-        Thread.sleep(10000);
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(detailsButton)).click();
-
+        //Thread.sleep(10000);
+        detailsButton.click();
     }
 
     public void searchBroker(String name) {
